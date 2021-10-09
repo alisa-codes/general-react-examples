@@ -1,0 +1,100 @@
+@import '../abstracts//mixins';
+@import '../abstracts/variables';
+
+.list-map{
+    @include centerItem;
+    align-self: center;
+    ul{
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+        @media(max-width:1100px){
+            flex-wrap: wrap;
+        }
+        li{
+            margin: 30px;
+            max-width: 330px;
+            padding:50px 30px;
+            border-radius: 10px;
+            background-color: $color-dark-blue;
+            position: relative;
+            z-index: 1;
+            text-align: left;
+            color: $color-white;
+            @include mainTransition;
+            cursor: pointer;
+            @media(max-width:1410px){
+                margin: 20px 10px;
+            }
+            @media(max-width:700px){
+                margin: 10px 0px;
+                max-width: 80%;
+                width: 100%;
+            }
+            &:hover{
+                background-image: url(../../Assets/listBg.webp);
+                background-position: center;
+                background-size: cover;
+            }
+            svg{
+                font-size: 35px;
+            }
+            h2{
+                margin: 12px 0px;
+                font-weight: 300;
+            }
+            p{
+                font-weight: 400;
+                line-height: 27px;
+            }
+        }
+    }
+}
+.card-map{
+@include centerItem;
+flex-direction: row;
+margin-top: 30px;
+@media(max-width:1100px){
+    flex-wrap: wrap;
+}
+}
+.card{
+    max-width: 350px;
+    margin: 20px ;
+    box-shadow: -1px 1px 5px 0px rgba(218, 218, 218, 0.514);
+    border-radius: 10px;
+    padding-bottom: 20px;
+    position: relative;
+    cursor: pointer;
+    @include mainTransition;
+    @media(max-width:700px){
+        margin: 10px 0px;
+        max-width: 80%;
+        width: 100%;
+    }
+    &::after{
+        @include bottomLine;
+        background: linear-gradient(90deg, #8a6dda, #bc7cdd);
+        
+    }
+    &:hover{
+        transform: translateY(-15px);
+        &::after{
+            @include hoverAfter;
+        }
+    }
+    .image-part{
+      border-radius: 10px;
+        width: 100%;
+        height: 200px;
+        background-position: center;
+        @media(max-width:700px){
+            background-size: 120%;
+        }
+    }
+    .content{
+        text-align: left;
+        padding: 20px;
+    }
+
+}

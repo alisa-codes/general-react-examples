@@ -1,0 +1,74 @@
+@import '../abstracts//mixins';
+@import '../abstracts/variables';
+
+
+
+.main-page{
+    @include centerItem ;
+    height: 100vh;
+   
+}
+.mainlink{
+    width: 100%;
+    @include centerItem ;
+    color: black;
+   transition: .2s ease-in-out;
+
+    &:hover{
+        color: white;
+    }
+
+}
+.styled-button{
+    width: 30%;
+    padding: 20px;
+    border: 1px solid rgba(128, 128, 128, 0.363);
+    font-size: 17px;
+    cursor: pointer;
+    margin: 15px 0px;
+    position: relative;
+    @include mainTransition;
+    @media(max-width:1000px){
+        width: 80%;
+    }
+    &::after{
+        @include afterEffect;
+        background-color: $color-dark-blue;
+      
+    }
+    &:hover{
+        transform: scale(1.03);
+
+        a{
+            color: white;
+            @include mainTransition;
+        }
+        &::after{
+           @include hoverAfter;
+        }
+    }
+    a{
+        color: black;
+        @include mainTransition;
+
+    }
+}
+.up-header{
+    text-align: left;
+    padding: 50px 0px 0px 100px;
+    @media(max-width:700px){
+      padding-left: 20px;
+    }
+    h1{
+        align-items: center;
+        display: flex;
+        color: $color-black;
+        @media(max-width:700px){
+          font-size: 20px;
+        }
+        svg{
+            margin-right: 10px;
+            font-size: 27px;
+        }
+    }
+}

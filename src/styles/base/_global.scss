@@ -1,0 +1,45 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li {
+    list-style-type: none;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin: 0;
+    font-weight: 500;
+  }
+  
+  button {
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+  
+  button:focus,
+  :focus {
+    outline: none;
+  }
+  
+  a {
+    text-decoration: none;
+    cursor: pointer;
+    &:hover,
+    &:focus,
+    &:active {
+      outline: 0;
+      box-shadow: none;
+      text-decoration: none;
+    }
+  }
+  

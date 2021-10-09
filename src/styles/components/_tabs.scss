@@ -1,0 +1,90 @@
+@import '../abstracts//mixins';
+@import '../abstracts/variables';
+
+.main-tabs{
+    margin-top: 70px;
+    width: 100%;
+    .react-tabs{
+        width: 100%;
+        &__tab-list{
+            display: flex;
+            width: 100%;
+            border-bottom: 1px solid rgba(212, 212, 212, 0.247) !important; 
+            padding: 0 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: none;
+            overflow-x: auto;
+            overflow-y: hidden;
+            margin: 0;
+        }
+        &__tab {
+            font-size: 1.2rem;
+            border-radius: unset;
+           align-items: center;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+           color: rgba(114, 113, 113, 0.445);
+            position: relative;
+            cursor: pointer;
+            &::after{
+                @include bottomLine;
+                background-color: #2962FF;
+
+            }
+            &--selected{
+                color: $color-black;
+                &::after{
+                    @include hoverAfter;
+                }
+            }
+        }
+    }
+}
+.tab-card{
+    padding: 40px 50px;
+    text-align: center;
+    align-items: center;
+    width: 380px;
+    border-radius: 5px;
+    box-shadow: 3px 9px 20px 1px rgba(black , 0.06);
+    margin:30px 20px;
+    @media(max-width:900px){
+        width: 80%;
+        margin: 20px 0px;
+    }
+    *{
+        font-weight: 400;
+    }
+    h3{
+        margin: 30px 0px;
+    }
+    p{
+        font-size: 18px;
+        color: gray;
+    
+    }
+    button{
+        border: none;
+        width: 100%;
+        margin-top: 20px;
+        background: none;
+        cursor: pointer;
+        padding: 15px;
+        border-radius: 5px;
+        border: 1px solid #0964EF;
+        color: #0964EF;
+        transition: 0.3s ease-in-out;
+        &:hover{
+            background-color: #0964EF;
+            color: white;
+        }
+    }
+}
+.panel{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}

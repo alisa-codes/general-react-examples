@@ -1,0 +1,107 @@
+@import '../abstracts//mixins';
+@import '../abstracts/variables';
+.positions{
+    @include centerItem;
+    margin-top: 40px;
+}
+.position{
+    width: 80%;
+    text-align: left;
+    border: 1px solid rgba(128, 128, 128, 0.144);
+    padding: 25px;
+    border-radius: 10px;
+    margin: 20px 0px;
+    button{
+        padding: 20px 40px;
+        color: $color-white;
+        background-color:$color-dark-blue;
+        border-radius: 5px;
+    }
+    h3{
+        border: 1px solid $color-pink  ;
+        color: $color-pink  ;
+        width: fit-content;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    .title{
+        display: flex;
+        justify-content: space-between;
+        margin: 15px 0px;
+        align-items: center;
+        h1{
+            font-weight: 400;
+            font-size: 26px;
+        }
+    }
+  p{
+      font-weight: 300;
+      span{
+          color: $color-pink;
+          font-weight: 500;
+      }
+  }
+}
+.propscards{
+    @include centerItem;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.props-card{
+    max-width: 450px;
+    border: 1px solid rgba(128, 128, 128, 0.144);
+     margin: 20px;
+     padding: 40px 30px;
+     text-align: left;
+     *{
+        font-weight: 400;
+     }
+    h3{
+        max-width: fit-content;
+        padding: 7px 20px;
+        font-size: 18px;
+        border-radius: 5px;
+        color: $color-white;
+        margin-right: 10px;
+    }
+    .name{
+        margin: 20px 0px;
+        display: flex;
+        align-items: center;
+        h2{
+            font-size: 20px;
+        }
+    }
+}
+@media(max-width:1000px){
+    .props-card{
+        max-width: 80%;
+        width: 100%;
+        margin: 12px 0px;
+    }
+}
+@media(max-width:700px){
+    .position{
+        width: 90%;
+        margin: 12px 0px;
+        @include centerItem;
+        h3{
+            font-size: 17px;
+        }
+        .title{
+            flex-direction: column;
+            h1{
+                font-size: 22px;
+            }
+            button{
+                margin-top: 10px;
+                padding: 12px 20px;
+            }
+        }
+    }
+    .props-card{
+        max-width: 90%;
+        width: 100%;
+    }
+}
+

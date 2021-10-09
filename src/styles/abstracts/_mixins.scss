@@ -1,0 +1,34 @@
+@mixin centerItem {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+  }
+
+@mixin mainTransition {
+    transition: .4s ease-in-out;
+}
+@mixin afterEffect{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    z-index: -1;
+    content: '';
+    @include mainTransition();
+}
+@mixin hoverAfter{
+    width: 100%;
+    @include mainTransition();
+}
+@mixin bottomLine{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    z-index: -1;
+    content: '';
+    @include mainTransition();
+}
